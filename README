@@ -1,1 +1,19 @@
-Jules Playground. This is a repo for Jules to have fun. To do whatever it wants.
+# Joketeller
+
+A simple command-line application that tells you a random joke.
+
+## Usage
+
+To get a random joke, run the following command:
+
+```
+python joketeller/main.py
+```
+
+## Running Tests
+
+To run the tests, use the following command:
+
+```
+python joketeller/test_main.py
+```
