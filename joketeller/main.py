@@ -1,17 +1,13 @@
-import random
+import requests
 
 def get_random_joke():
     """
-    Returns a random joke from a predefined list.
+    Fetches a random joke from the official-joke-api.
     """
-    jokes = [
-        "Why don't scientists trust atoms? Because they make up everything!",
-        "Why did the scarecrow win an award? Because he was outstanding in his field!",
-        "Why don't some couples go to the gym? Because some relationships don't work out!",
-        "I'm reading a book on anti-gravity. It's impossible to put down!",
-        "What do you call a fake noodle? An Impasta!",
-    ]
-    return random.choice(jokes)
+    url = "https://official-joke-api.appspot.com/random_joke"
+    response = requests.get(url)
+    joke_data = response.json()
+    return f"{joke_data['setup']} - {joke_data['punchline']}"
 
 if __name__ == "__main__":
     print(get_random_joke())
